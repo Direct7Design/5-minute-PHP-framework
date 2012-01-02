@@ -8,7 +8,7 @@
   <style type="text/css">
     body {
       margin-top: 1.0em;
-      background-color: #d8a816;
+      background-color: #E5E5E5;
       font-family: Helvetica, Arial, FreeSans, san-serif;
       color: #000000;
     }
@@ -16,17 +16,19 @@
       margin: 0 auto;
       width: 700px;
     }
-    h1 { font-size: 3.8em; color: #2757e9; margin-bottom: 3px; }
+    h1 { font-size: 3.8em; color: #853058; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
     h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #2757e9; }
-    h3 { text-align: center; color: #2757e9; }
-    a { color: #2757e9; }
+    h2 { font-size: 1.5em; color: #09f; }
+    h3 { text-align: center; color: #09f; }
+    a { color: #853058; }
+    a:hover { text-decoration: underline; }
     .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
     .download { float: right; }
     pre { background: #000; color: #fff; padding: 15px;}
     hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
     .footer { text-align:center; padding-top:30px; font-style: italic; }
+    ul li { margin-top: 3px;}
   </style>
 </head>
 
@@ -46,59 +48,64 @@
       <span class="small">by <a href="https://github.com/pbudzon">pbudzon</a></span></h1>
 
     <div class="description">
-      Small and fast PHP framework usable for practically any small PHP project. Contains MySQL and MongoDB support.
+      Small and fast PHP framework usable for practically any small PHP project. Contains MySQL and MongoDB support, data crypting and automatic caching with Memcached.
     </div>
+      
+      <h2>Dependencies</h2>     
+        <ul>
+            <li>PHP 5.3.</li>
+            <li>Optional: mcrypt extension is required for encryption.</li>
+            <li>Optional: memcached extension is required for caching.</li>
+            <li>Optional: PDO with MySQL driver extension is required for MySQL usage.</li>
+            <li>Optional: MongoDB driver extension is required for MongoDB usage.</li>
+        </ul>
 
-    
-      <p>Small and fast PHP framework usable for practically any small PHP project. Contains MySQL and MongoDB support, data crypting and automatic caching with Memcached.</p>
-    
-
-    
-      <h2>Dependencies</h2>
-      <p>PHP 5.3.
-Optional: mcrypt extension is required for encryption.
-Optional: memcached extension is required for caching.
-Optional: PDO with MySQL driver extension is required for MySQL usage.
-Optional: MongoDB driver extension is required for MongoDB usage.</p>
-    
-
-    
       <h2>Install</h2>
-      <p>Download the source files (as zip or tar.gz or clone this repository).
-Edit the public_html/index.php file to adjust config settings: set absolute_url and relative_url to proper values (refer to inline documentation for more details on config values).
-Optional: you may also want to set the cookie_name value.
-Point your server to public_html.
-You're good to go!</p>
+      <ul>
+            <li>Download the source files.</li>
+            <li>Edit the <code>public_html/index.php</code> file to adjust config settings: set <code>absolute_url</code> and <code>relative_url</code> to proper values (refer to inline documentation for more details on config values).</li>
+            <li>Optional: you may also want to set the <code>cookie_name</code> value.</li>
+            <li>Point your server to <code>public_html</code>.</li>
+            <li>You're good to go!</li>
+      </ul>
     
-
-    
+      <h2>Download</h2>
+        <p>
+          You can download this project in either
+          <a href="https://github.com/pbudzon/5-minute-PHP-framework/zipball/master">zip</a> or
+          <a href="https://github.com/pbudzon/5-minute-PHP-framework/tarball/master">tar formats.
+        </p>
+        <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+          by running:
+          <pre>$ git clone git://github.com/pbudzon/5-minute-PHP-framework</pre>
+        </p>
+      
       <h2>License</h2>
-      <p>Licensed under BSD 2-Clause License.</p>
+      <p>Licensed under BSD 2-Clause License.<br /><br />
+          Copyright © 2011 Paulina Budzoń. All rights reserved.
+          <br /><br />
+          Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+          <br /><br />
+          Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+          <br /><br />
+          Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+          <br /><br />
+          THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+      </p>
     
 
     
-      <h2>Authors</h2>
-      <p>Paulina Budzon (paulina.budzon@gmail.com)<br/><br/>      </p>
-    
-
-    
+      
       <h2>Contact</h2>
-      <p>Paulina Budzoń (paulina.budzon@gmail.com)<br/>      </p>
+      <p>
+          Paulina Budzoń (paulina.budzon@gmail.com)
+      </p>
     
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/pbudzon/5-minute-PHP-framework/zipball/master">zip</a> or
-      <a href="https://github.com/pbudzon/5-minute-PHP-framework/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/pbudzon/5-minute-PHP-framework</pre>
-    </p>
+      <hr />
 
     <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/pbudzon/5-minute-PHP-framework">pbudzon/5-minute-PHP-framework</a>
+      Get the source code on GitHub : <a href="https://github.com/pbudzon/5-minute-PHP-framework">pbudzon/5-minute-PHP-framework</a>
     </div>
 
   </div>
