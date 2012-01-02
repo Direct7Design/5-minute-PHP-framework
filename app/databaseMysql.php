@@ -1,6 +1,11 @@
 <?php
 /**
+ * Driver for MySQL.
+ * Almost every method in this class will throw 503 error on connection problems.
+ * @uses PHP_MANUAL#PDO to connect to the database.
  * @author Paulina Budzon <paulina.budzon@gmail.com>
+ * @package frameworkCore
+ * @subpackage databaseDrivers
  */
 class databaseMysql extends appDatabase {
   
@@ -23,12 +28,36 @@ class databaseMysql extends appDatabase {
      */
     protected $_dbTable;
     
+    /**
+     * Default id field name. 
+     * Can be changed per model.
+     * @var string
+     */
     public $_idField = "id";
     
+    /**
+     * Whether or not the data should be cached.
+     * Can be changed per model.
+     * @var type 
+     */
     public $_cache = false;
+    
+    /**
+     * Default cache namespace. It's set in {@link __construct()}.
+     * @var string 
+     */
     public $_cacheKey = "";
+    
+    /**
+     * Whether or not the data should be encrypted.
+     * Can be changed per model.
+     * @var bool 
+     */
     protected $_crypted = false;
     
+    /**
+     * Selects appropriate database table and sets {@link $_cacheKey}.
+     */
     public function __construct() {
         $this->selectTable();
 	$this->_cacheKey = $this->_dbName.$this->_dbTable;
@@ -79,6 +108,10 @@ class databaseMysql extends appDatabase {
         return self::$_instance; 
     }
         
+    /**
+     * Selects appropriate database table.
+     * @return mixed Value returned by {@link PDO::exec()}. 
+     */
     private function selectTable(){
 	if(!$this->_dbName){
 	    $this->throwError(500,"Model ".get_class($this)." does not have a table set!");
@@ -87,10 +120,21 @@ class databaseMysql extends appDatabase {
 	return self::getInstance()->exec("USE ".$this->_dbName);
     }
     
+    /**
+     * Returns the name of current table.
+     * @return string 
+     */
     public function getTableName(){
 	return $this->_dbTable;
     }
     
+    /**
+     * Executes given SQL query and returnes the result.
+     * @param string $sql SQL query to execute.
+     * @param array $params Params to be passed with the query.
+     * @param bool $onlyExec If the results should be fetched, or only the query executed.
+     * @return MySqlResult 
+     */
     final public function load($sql, $params = false, $onlyExec = false){	
 	if($this->_cache && !$fetchAll){
 	    $cacheKey = sha1($sql);
@@ -119,6 +163,11 @@ class databaseMysql extends appDatabase {
 	return false;
     }
     
+    /**
+     * Shortcut method for deleting rows by id (so it doesn't have to be added to each model).
+     * @param string $id Id of the row to be deleted.
+     * @return bool Returns TRUE on success or FALSE on failure.
+     */
     public function deleteById($id){
 	$sth = self::getInstance()->prepare("DELETE FROM ".$this->_dbTable." WHERE ".$this->_idField." = :id");
 	$exec = $sth->execute(array(":id" => $id));
@@ -132,11 +181,23 @@ class databaseMysql extends appDatabase {
 	return $exec;
     }
        
+    /**
+     * Shortcut method for getting rows by id (so it doesn't have to be added to each model).
+     * @param string $id Id of the rows to be returned.
+     * @return MySqlResult Result. 
+     */
     public function getById($id){
 	$sql = "SELECT * FROM ".$this->_dbTable." WHERE ".$this->_idField." = :id";
 	return $this->load($sql, array(":id" => $id));
     }
     
+    /**
+     * Shortcut method for getting all rows in table (so it doesn't have to be added to each model).
+     * Results can be returned by "pages".
+     * @param int $page Number of the page to return. If 0 all rows will be returned.
+     * @param int $perPage Number of the rows per page to return. Only if $page != 0.
+     * @return MySqlResult Results. 
+     */
     public function getAll($page = 0, $perPage = 20){
 	$sql = "SELECT * FROM ".$this->_dbTable;
 	if($page > 0){
@@ -146,6 +207,13 @@ class databaseMysql extends appDatabase {
 	return $this->load($sql);
     }
     
+    /**
+     * Encrypts data in model if encryption is set.
+     * If encryption is off, this will simply return the original data.
+     * @param mixed $data Data to be encrypted.
+     * @param string $iv IV for encryption.
+     * @return mixed Encrypted data.
+     */
     public function crypt($data, $iv = false){ 
         if($this->_crypted){
 	    return parent::crypt($data, md5($this->_dbTable));
@@ -153,6 +221,14 @@ class databaseMysql extends appDatabase {
         return $data;
     }
     
+    
+    /**
+     * Decrypts data in model if encryption is set.
+     * If encryption is off, this will simply return the original data.
+     * @param mixed $data Data to be decrypted.
+     * @param string $iv IV for encryption.
+     * @return mixed Decrypted data.  
+     */
     public function decrypt($data, $iv = false){
         if($this->_crypted){
             return parent::decrypt($data, md5($this->_dbTable));
@@ -161,13 +237,39 @@ class databaseMysql extends appDatabase {
     }
 }
 
+/**
+ * MySQL result object. Can be used to access and manipulate database data.
+ * @package frameworkCore
+ * @subpackage databaseResults
+ */
 class MySqlResult extends databaseResult {
     
+    /**
+     * The result.
+     * @var mixed
+     */
     private $_result;
+    /**
+     * Id field used in results, got from the parent model.
+     * @var string 
+     */
     private $_id;
+    /**
+     * Current position for the iterator.
+     * @var int
+     */
     private $_position;
+    /**
+     * Parent model object.
+     * @var appDatabase 
+     */
     private $_parentModel;
     
+    /**
+     * Fills appropriate information about the result.
+     * @param mixed $data Result data.
+     * @param appDatabase $parentModel Parent model object.
+     */
     public function __construct($data, $parentModel) {
        if(is_array($data)){
 	   if(count($data) > 1){ //multiple results
@@ -188,6 +290,12 @@ class MySqlResult extends databaseResult {
        }
     }
     
+    /**
+     * Returns given field from the result. 
+     * If $field is not passed, whole original result will be returned - note it will NOT be decrypted.
+     * @param string $field Name of the field.
+     * @return mixed Value for the field. 
+     */
     public function get($field = false){
 	if(!$field) return $this->_result;
 	
@@ -203,17 +311,34 @@ class MySqlResult extends databaseResult {
 	return;	
     }
     
+    /**
+     * Adds related data to given object, so it can be accessed later by {@link get()}.
+     * @param string $name Name of the relation.
+     * @param mixed $data Data to be stored.
+     */
     public function addRelation($name, $data){
 	if(!$this->multiple){
 	    $this->_relation[$name] = $data; 
 	}
     }
     
+    /**
+     * Sets given key in the result to given value.
+     * @param string $field Name of the field.
+     * @param mixed $value Value for which it should be set.
+     * @return MySqlResult 
+     */
     public function set($field, $value){
 	$this->_result[$this->_position][$field] = $value;
 	return $this; //to allow chaining ->save() after this method
     }
     
+    /**
+     * Saves the current result to the database.
+     * @param bool $complete If the result is multiple, whether only the current result should be saved or whole cursor.
+     * @return bool Whether the save was successfull. Save will abort after the first error.
+     * @uses saveOne() to save each result.
+     */
     public function save($complete = false){
 	if(!$this->valid()) $this->throwError(500, "Can't save the current object, pointer too big!");
 	
@@ -230,6 +355,11 @@ class MySqlResult extends databaseResult {
 	}
     }
     
+    /**
+     * Saves the given row if id field exists in it.
+     * @param array $row Row to be saved.
+     * @return bool Whether the save was successfull.
+     */
     private function saveOne($row){
 	$keys = array();
 	$values = array();
@@ -239,26 +369,44 @@ class MySqlResult extends databaseResult {
 	}
 	if(empty($keys)) return false;
 	
-	$sql = "UPDATE ".$this->_parentModel->getTableName()." SET ".implode(", ", $keys);
+	$sql = "UPDATE ".$this->_parentModel->getTableName()." SET ".implode(", ", $keys)." WHERE ".$this->_id." = :".$this->_id;
 	return $this->_parentModel->load($sql, $values, true);   
-	}
+    }
     
+    /**
+     * Rewinds the cursor.
+     */
     public function rewind() {
         $this->_position = 0;
     }
 
+    /**
+     * Returns the result.
+     * @return mixed 
+     */
     public function current() {
         return $this->_result[$this->_position];
     }
 
+    /**
+     * Returns current interator key.
+     * @return int
+     */
     public function key() {
         return $this->_position;
     }
 
+    /**
+     * Moves the cursor to the next result.
+     */
     public function next() {
         ++$this->_position;
     }
 
+    /**
+     * Tells whether the current position in cursor is valid.
+     * @return bool
+     */
     public function valid() {
         return isset($this->_result[$this->_position]);
     }

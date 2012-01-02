@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class databaseMongoDB</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> databaseMongoDB</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Driver for MongoDB.</p>
+<p class="description"><p>Almost every method in this class will throw 503 error on connection problems.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Paulina Budzon &lt;<a href="mailto:paulina.budzon@gmail.com">paulina.budzon@gmail.com</a>&gt;</li>
+				<li><span class="field">uses:</span> <a href="http://www.php.net/Mongo">Mongo</a> - to connect to the database.</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_app---databaseMongoDB.php.html">/app/databaseMongoDB.php</a> (line <span class="field">10</span>)
+		</p>
+		
+				
+		<pre><a href="../../frameworkCore/appCore.html">appCore</a>
+   |
+   --<a href="../../frameworkCore/appDatabase.html">appDatabase</a>
+      |
+      --databaseMongoDB</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../../frameworkCore/databaseModels/usersModel.html">usersModel</a>
+					</td>
+					<td>
+											This is an example model used with MongoDB. To use the example for user's login add the following data to your MongoDB:
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																								<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">type</span>
+					<a href="#$_cache" title="details" class="var-name">$_cache</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_cacheKey" title="details" class="var-name">$_cacheKey</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">MongoCollection</span>
+					<a href="#$_collection" title="details" class="var-name">$_collection</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">bool</span>
+					<a href="#$_crypted" title="details" class="var-name">$_crypted</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_dbName" title="details" class="var-name">$_dbName</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_dbTable" title="details" class="var-name">$_dbTable</a>
+				</div>
+																<div class="var-title">
+					<img src="../../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$_idField" title="details" class="var-name">$_idField</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																<div class="method-definition">
+					<img src="../../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">databaseMongoDB</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#command" title="details" class="method-name">command</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$command</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#crypt" title="details" class="method-name">crypt</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$iv</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#decrypt" title="details" class="method-name">decrypt</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$iv</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#deleteById" title="details" class="method-name">deleteById</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../frameworkCore/databaseResults/MongoDBResult.html">MongoDBResult</a></span>
+										<a href="#getAll" title="details" class="method-name">getAll</a>
+											([<span class="var-type">int</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">0</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">20</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../frameworkCore/databaseResults/MongoDBResult.html">MongoDBResult</a></span>
+										<a href="#getById" title="details" class="method-name">getById</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">MongoCollection</span>
+										<a href="#getCollection" title="details" class="method-name">getCollection</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#insert" title="details" class="method-name">insert</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$safe</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../../frameworkCore/databaseResults/MongoDBResult.html">MongoDBResult</a></span>
+										<a href="#load" title="details" class="method-name">load</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fetchAll</span> = <span class="var-default">false</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$fields</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#save" title="details" class="method-name">save</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$safe</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#update" title="details" class="method-name">update</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$safe</span> = <span class="var-default">true</span>])
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$_cache" id="$_cache"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">type</span>
+			<span class="var-name">$_cache</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether or not the data should be cached.</p>
+<p class="description"><p>Can be changed per model.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_cacheKey" id="$_cacheKey"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_cacheKey</span>
+			 = <span class="var-default"> &quot;&quot;</span>			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Default cache namespace. It's set in __construct().</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_collection" id="$_collection"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">MongoCollection</span>
+			<span class="var-name">$_collection</span>
+						(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Holds current collection object.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_crypted" id="$_crypted"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">bool</span>
+			<span class="var-name">$_crypted</span>
+			 = <span class="var-default"> false</span>			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether or not the data should be encrypted.</p>
+<p class="description"><p>Can be changed per model.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../frameworkCore/databaseModels/usersModel.html#var$_crypted">usersModel::$_crypted</a>
+							</li>
+				</ul>
+		
+
+</div>
+<a name="var$_dbName" id="$_dbName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_dbName</span>
+						(line <span class="line-number">23</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Database name to use - should be set for each model.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../frameworkCore/databaseModels/usersModel.html#var$_dbName">usersModel::$_dbName</a>
+							</li>
+				</ul>
+		
+
+</div>
+<a name="var$_dbTable" id="$_dbTable"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_dbTable</span>
+						(line <span class="line-number">29</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Database collection to use - should be set for each model.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../../frameworkCore/databaseModels/usersModel.html#var$_dbTable">usersModel::$_dbTable</a>
+							</li>
+				</ul>
+		
+
+</div>
+<a name="var$_idField" id="$_idField"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$_idField</span>
+			 = <span class="var-default"> &quot;_id&quot;</span>			(line <span class="line-number">36</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Default id field name.</p>
+<p class="description"><p>Can be changed per model.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../../frameworkCore/appCore.html">appCore</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../frameworkCore/appCore.html#var$_cookies">appCore::$_cookies</a></span><br>
+							</span>
+													<img src="../../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../../frameworkCore/appCore.html#var$_view">appCore::$_view</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">67</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if all data is in place for connection and sets $_cacheKey.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">databaseMongoDB</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../frameworkCore/appDatabase.html#method__construct">appDatabase::__construct()</a></dt>
+						<dd>Adds &quot;models/&quot; directory to include path.</dd>
+					</dl>
+			
+	</div>
+<a name="methodcommand" id="command"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">command</span> (line <span class="line-number">248</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes given command on the database (not collection!).</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns value returned by MongoDB::execute().</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/mongodb.execute.php">mongodb.execute.php</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			command
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$command</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$command</span><span class="var-description">: Command to be executed.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcrypt" id="crypt"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">crypt</span> (line <span class="line-number">337</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Encrypts data in model if encryption is set.</p>
+<p class="description"><p>If encryption is off, this will simply return the original data.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Encrypted data.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			crypt
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$iv</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: Data to be encrypted.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$iv</span><span class="var-description">: IV for encryption.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../frameworkCore/appDatabase.html#methodcrypt">appDatabase::crypt()</a></dt>
+						<dd>Common method used by database drivers to encrypt the data.</dd>
+					</dl>
+			
+	</div>
+<a name="methoddecrypt" id="decrypt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">decrypt</span> (line <span class="line-number">351</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Decrypts data in model if encryption is set.</p>
+<p class="description"><p>If encryption is off, this will simply return the original data.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Decrypted data.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			decrypt
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$iv</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: Data to be decrypted.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$iv</span><span class="var-description">: IV for encryption.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../../frameworkCore/appDatabase.html#methoddecrypt">appDatabase::decrypt()</a></dt>
+						<dd>Common method used by database drivers to decrypt the data.</dd>
+					</dl>
+			
+	</div>
+<a name="methoddeleteById" id="deleteById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">deleteById</span> (line <span class="line-number">288</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Shortcut method for deleting documents by id (so it doesn't have to be added to each model).</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns value returned by MongoCollection::remove().</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/mongocollection.remove.php">mongocollection.remove.php</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			deleteById
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: Id of the document to be deleted.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetAll" id="getAll"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getAll</span> (line <span class="line-number">322</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Shortcut method for getting all documents in collection (so it doesn't have to be added to each model).</p>
+<p class="description"><p>Results can be returned by &quot;pages&quot;.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Results.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../frameworkCore/databaseResults/MongoDBResult.html">MongoDBResult</a></span>
+		<span class="method-name">
+			getAll
+		</span>
+					([<span class="var-type">int</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">0</span>], [<span class="var-type">int</span>&nbsp;<span class="var-name">$perPage</span> = <span class="var-default">20</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$page</span><span class="var-description">: Number of the page to return. If 0 all documents will be returned.</span>			</li>
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$perPage</span><span class="var-description">: Number of the documents per page to return. Only if $page != 0.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetById" id="getById"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getById</span> (line <span class="line-number">310</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Shortcut method for getting documents by id (so it doesn't have to be added to each model).</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Result.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../frameworkCore/databaseResults/MongoDBResult.html">MongoDBResult</a></span>
+		<span class="method-name">
+			getById
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: Id of the document to be returned.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetCollection" id="getCollection"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">getCollection</span> (line <span class="line-number">131</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns current collection, if connected.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">MongoCollection</span>
+		<span class="method-name">
+			getCollection
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodinsert" id="insert"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">insert</span> (line <span class="line-number">198</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Inserts given row to the collection.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns value returned by MongoCollection::insert().</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/mongocollection.insert.php">mongocollection.insert.php</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			insert
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$safe</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$row</span><span class="var-description">: Row to be inserted.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$safe</span><span class="var-description">: Whether the insert should be &quot;safe&quot;.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodload" id="load"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">load</span> (line <span class="line-number">162</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads given query.</p>
+<p class="description"><p>If caching is on: returns cached result if it exists or sets a new cache key.  Refer to given resource for information on how to create queries.</p></p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="http://www.php.net/mongocollection.find.php">mongocollection.find.php</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../../frameworkCore/databaseResults/MongoDBResult.html">MongoDBResult</a></span>
+		<span class="method-name">
+			load
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$query</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$fetchAll</span> = <span class="var-default">false</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$fields</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$query</span><span class="var-description">: Query to be run on collection.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$fetchAll</span><span class="var-description">: Optional: Whether findOne() or find() should be run (do you need one or all the results?)</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$fields</span><span class="var-description">: Optional list of fields that should be returned. By default the whole document is returned.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsave" id="save"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">save</span> (line <span class="line-number">266</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Saves given row.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns value returned by MongoCollection::save().</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/mongocollection.save.php">mongocollection.save.php</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			save
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$row</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$safe</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$row</span><span class="var-description">: Row to be saved.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$safe</span><span class="var-description">: Whether the save should be &quot;safe&quot;.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupdate" id="update"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../../media/images/Method.png" />
+		<span class="method-title">update</span> (line <span class="line-number">224</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Updates the given document with given data.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Returns value returned by MongoCollection::update().</li>
+				<li><span class="field">see:</span> <a href="http://www.php.net/mongocollection.update.php">mongocollection.update.php</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			update
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">bool</span>&nbsp;<span class="var-name">$safe</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: Id of the document to be updated.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$data</span><span class="var-description">: Update query.</span>			</li>
+					<li>
+				<span class="var-type">bool</span>
+				<span class="var-name">$safe</span><span class="var-description">: Whether the update should be &quot;safe&quot;.</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../frameworkCore/appDatabase.html">appDatabase</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appDatabase.html#method__construct">appDatabase::__construct()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appDatabase.html#methodcrypt">appDatabase::crypt()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appDatabase.html#methoddecrypt">appDatabase::decrypt()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appDatabase.html#methodgetModel">appDatabase::getModel()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../../frameworkCore/appCore.html">appCore</a></span></p>
+					<blockquote>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methodcache">appCore::cache()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methodcookies">appCore::cookies()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methoddb">appCore::db()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methodredirect">appCore::redirect()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methodrequest">appCore::request()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methodstart">appCore::start()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methodsthrowError">appCore::sthrowError()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methodthrow404">appCore::throw404()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methodthrowError">appCore::throwError()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methoduser">appCore::user()</a></span><br>
+													<img src="../../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../../frameworkCore/appCore.html#methodview">appCore::view()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 02 Jan 2012 16:08:36 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

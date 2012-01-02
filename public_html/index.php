@@ -1,6 +1,7 @@
 <?php
 /**
  * Entry point for all requests.
+ * @package frameworkCore
  * @author Paulina Budzon <paulina.budzon@gmail.com>
  */
 

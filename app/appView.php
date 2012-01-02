@@ -2,6 +2,7 @@
 /**
  * This is a class taking care of views and returning html to the user.
  * @author Paulina Budzon <paulina.budzon@gmail.com>
+ * @package frameworkCore
  */
 class appView {
     
@@ -41,6 +42,10 @@ class appView {
      */
     private $_disabled = false;
     
+    /**
+     * Ajax data that should be returned as json-encoded string.
+     * @var array 
+     */
     private $_ajaxData = array();
     
     /**
@@ -50,6 +55,9 @@ class appView {
      */
     public static $title = false;   
     
+    /**
+     * Adds "templates/" directory to the include path.
+     */
     public function __construct(){
 	set_include_path(get_include_path() . PATH_SEPARATOR . __DIR__."/templates/");
     }
@@ -158,11 +166,23 @@ class appView {
 	$this->_disabled = true;
     }
     
+    /**
+     * Creates a link to the given path. Relative links are returned by default.
+     * For example, to create a link for controller "user", pass "user" as $url.
+     * This should be used in templates to create links, especially for internals of this application.
+     * @param string $url Path for the link.
+     * @param bool $absolute Whether the returned link should be absolute url.
+     * @return string Fixed url. 
+     */
     public function link($url, $absolute = false){
 	if($absolute) return appConfig::get("absolute_url").$url;
 	return appConfig::get("relative_url").$url;
     }
     
+    /**
+     * Adds data to be returned as json-encoded string.
+     * @param mixed $data Data to be returned.
+     */
     public function sendAjax($data){
         $this->_isAjax = true;
         if(is_array($data)){
@@ -173,6 +193,10 @@ class appView {
         }   
     }
     
+    /**
+     * Sets title to the currently shown page.
+     * @param string $title Title to show.
+     */
     public function setTitle($title){
         self::$title = $title;
     }

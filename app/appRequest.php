@@ -1,7 +1,8 @@
 <?php
 /**
- * This is a class taking care of all forms data.
+ * Takes care of all forms data.
  * @author Paulina Budzon <paulina.budzon@gmail.com>
+ * @package frameworkCore
  */
 class appRequest {
     

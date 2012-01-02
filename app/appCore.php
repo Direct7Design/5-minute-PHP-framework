@@ -1,13 +1,20 @@
 <?php
 /**
- * This is a core file of the application.
+ * Core file of the framework.
  * @author Paulina Budzon <paulina.budzon@gmail.com>
- * @package fuluFramework
+ * @package frameworkCore
  */
 
+/**
+ * Include required files.
+ */
 require_once 'functions.php';
 require_once 'controllers/main.php';
 
+/**
+ * Main class taking care of routing and errors.
+ * @package frameworkCore
+ */
 class appCore {
     
     /**
@@ -63,9 +70,23 @@ class appCore {
         505 => '505 HTTP Version Not Supported'
     );
        
+    /**
+     * View object. This should be accessed by {@link view()}.
+     * @var appView 
+     */
     protected $_view;
+    
+    /**
+     * Cookie object. This should be accessed by {@link cookies()}.
+     * @var appCookie 
+     */
     protected $_cookies;
     
+    /**
+     * First and only method that should be called to start the framework.
+     * It handles all initializations, creates basic objects, starts sessions, etc.
+     * @param array $config Config information that should be used. 
+     */
     public function start($config){
 	set_include_path(get_include_path().PATH_SEPARATOR.__DIR__."/controllers/".PATH_SEPARATOR.__DIR__."/helpers/".PATH_SEPARATOR.__DIR__."/lib/");
 	spl_autoload_register(array($this, "loadClass"));
@@ -97,6 +118,10 @@ class appCore {
 	$this->end();
     }
     
+    /**
+     * This is called by {@link start()} to handle routing.
+     * Handles request uri and calls appropriate controller as needed.
+     */
     private function dispatch(){
 	$relUrl = appConfig::get("relative_url");
 	$requestUri = $_SERVER['REQUEST_URI'];
@@ -158,6 +183,12 @@ class appCore {
 	}
     }
     
+    /**
+     * Helper method used by {@link dispatch()} to remove all unneeded information from request uri parts.
+     * Mainly, it removes any additions from GET requests: changes "action?get_param1=1&_getparam2=2" to "action".
+     * @param string $arg Part of the request uri to clean.
+     * @return string Cleaned string. 
+     */
     private function cleanArgument($arg){
 	if(preg_match("/(?P<url>.*)(\?)+(.*)/", $arg, $matches)){
 	    return strtolower($matches['url']);
@@ -165,6 +196,11 @@ class appCore {
 	return strtolower($arg);
     }
     
+    /**
+     * Loads appropriate file for given class, if such file exists.
+     * Throws 404 error if not found. This is used to provide lazy-loading feature.
+     * @param string $class Name of the class to load.
+     */
     private function loadClass($class){
 	if(stream_resolve_include_path($class.".php")){
 	    require_once($class.".php");
@@ -176,16 +212,20 @@ class appCore {
     
     
     /**
-     * Throws given error and ends the request.
-     * If a debug mode is on ("debug" option in appConfig), then it will also include $message in the output.
-     * @uses $messages to show error message.
-     * @param type $code
-     * @param type $message 
+     * Shortcut for {@link self::sthrowError()} that can be called non-statically.
      */
     public function throwError($code, $message = false){
         self::sthrowError($code, $message);
     }
     
+    /**
+     * Throws given error and ends the request. If the appropriate error template exists it will be shown.
+     * To use the template name the appropriate file in templates/ as "error_numberofError.php", for example "error_404.php".
+     * If a debug mode is on ("debug" option in appConfig), then it will also include $message in the output.
+     * @uses $messages to show error message.
+     * @param type $code
+     * @param type $message 
+     */
     public static function sthrowError($code, $message = false){
 	if (substr(PHP_SAPI, 0, 3) === 'cgi'){
             //Send Status header if running with fastcgi
@@ -248,30 +288,55 @@ class appCore {
     }
     
     /**
-     * Lazy-loading of an appRequest class that may not be needed always.
-     * Every controller should call this method to access appRequest class.
+     * Lazy-loading of an appRequest class that may not be always needed.
+     * Every controller should call this method to access {@link appRequest} class.
      * @return appRequest 
      */
     protected function request(){
 	return appPocket::request();
     }
     
+    /**
+     * Lazy-loading of an appDatabase class that may not be always needed.
+     * Every controller should call this method to access {@link appDatabase} class.
+     * @return appDatabase 
+     */
     protected function db(){
 	return appPocket::db();
     }
     
+    /**
+     * Lazy-loading of an appUser class that may not be always needed.
+     * Every controller should call this method to access {@link appUser} class.
+     * @return appUser 
+     */
     protected function user(){
 	return appPocket::user();
     }
     
+    /**
+     * Lazy-loading of an appView class that may not be always needed.
+     * Every controller should call this method to access {@link appView} class.
+     * @return appView 
+     */
     protected function view(){
 	return appPocket::view();
     }
     
+    /**
+     * Lazy-loading of an appCookie class that may not be always needed.
+     * Every controller should call this method to access {@link appCookie} class.
+     * @return appCookie 
+     */
     protected function cookies(){
 	return appPocket::cookie();
     }
-    
+        
+    /**
+     * Lazy-loading of an appCache class that may not be always needed.
+     * Every controller should call this method to access {@link appCache} class.
+     * @return appCache 
+     */
     protected function cache(){
 	return appPocket::cache();
     }

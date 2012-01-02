@@ -2,9 +2,14 @@
 /**
  * User management. 
  * @author Paulina Budzon <paulina.budzon@gmail.com>
+ * @package frameworkCore
  */
 class appUser extends appCore{
     
+    /**
+     * Name of the session key used to store user's information.
+     * @var string
+     */
     private $_name = "logged_member";
    
     /**
@@ -43,7 +48,7 @@ class appUser extends appCore{
      * Logins the user with given username and password. 
      * @param string $user User's name
      * @param string $password User's password.
-     * @return bool Whether or not such user can and was logged in.  
+     * @return bool Whether or not such user exists and was logged in.  
      */
     public function login($user, $password){
 	$usersModel = $this->db()->getModel("users");
@@ -67,8 +72,8 @@ class appUser extends appCore{
     
     /**
      * Returns specific information about current user.
-     * @param string $what Name of the data to be returned, for example "email".
-     * @return string Found string or false if no such string exists.  
+     * @param string $what Name of the data to be returned, for example "login".
+     * @return string Found string or false if no such key exists.  
      */
     public function get($what){
 	if(isset($_SESSION[$this->_name][$what])){

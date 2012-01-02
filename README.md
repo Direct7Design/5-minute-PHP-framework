@@ -5,11 +5,13 @@ Small and fast PHP framework usable for practically any small PHP project. Conta
 ## Features
 
 * Fast (almost no overhead) and small (only 150KB of core files).
+* Minimal memory usage with lazy-loading system prevents unneeded files from being loaded.
 * MVC-based with simple template system.
 * Supports MySQL and MongoDB databases out of the box (both can be used simultaneously).
 * Can be easily extended with almost any database support, transparently to the rest of the code.
 * Encrypts and decrypts (automatically) data passed to the database (encrypting can be defined for each model separately).
 * Automatically caches database results with Memcached.
+* Supports AJAX requests.
 * Contains example of a simple user's object allowing to login the user.
 * Easy to maintain and improve.
 
@@ -37,7 +39,7 @@ Small and fast PHP framework usable for practically any small PHP project. Conta
 4. Add appropriate config settings concerning your database to `index.php`:
  + For MySQL: `mysql_db_host`, `mysql_db_port`, `mysql_db_user`, `mysql_db_pass`.
  + For MongoDB: `mongo_db_socket` or `mongo_db_host` and `mongo_db_port`, optionally also `mongo_db_user`, `mongo_db_pass`.
-5. Open the page, example login data are - login: _**test**_,  password: _**test**_. 
+5. Open the page, example login data is - login: _**test**_,  password: _**test**_. 
 
 ## FAQ
 

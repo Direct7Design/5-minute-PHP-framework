@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Custom 503 error page.
+ * @author Paulina Budzon <paulina.budzon@gmail.com>
+ * @package frameworkCore
+ * @subpackage templates
+ */
+?>
 <!DOCTYPE html> 
 <html>
     <head>

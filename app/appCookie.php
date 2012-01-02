@@ -2,11 +2,13 @@
 /**
  * This is a class taking care of handling cookies.
  * @author Paulina Budzon <paulina.budzon@gmail.com>
+ * @package frameworkCore
  */
 class appCookie {
     
     /**
      * Name of the main cookie holding the session id.
+     * This is set to config setting called "cookie_name".
      * @var string
      */
     private $_name;

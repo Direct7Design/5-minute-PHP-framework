@@ -1,3 +1,11 @@
+<?php 
+/**
+ * Example template for the login page.
+ * @author Paulina Budzon <paulina.budzon@gmail.com>
+ * @package frameworkCore
+ * @subpackage templates
+ */
+?>
 <div class="login">
     <h1>Login</h1>
     <div class="login-form">

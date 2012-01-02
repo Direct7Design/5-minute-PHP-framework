@@ -1,3 +1,12 @@
+<?php 
+/**
+ * Main template for the whole views. This file should always exist!
+ * All other templates are added to this file.
+ * @author Paulina Budzon <paulina.budzon@gmail.com>
+ * @package frameworkCore
+ * @subpackage templates
+ */
+?>
 <!DOCTYPE html> 
 <html>
     <head>

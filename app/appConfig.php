@@ -1,7 +1,12 @@
 <?php
 /**
  * This is a class takes care of handling configuration options.
+ * 
+ * Refer to documentation of {@link $_defaults} variable for specific information on config variables.
+ * You can specify your own config settings in index.php.
+ * 
  * @author Paulina Budzon <paulina.budzon@gmail.com>
+ * @package frameworkCore
  */
 class appConfig {
     
@@ -17,6 +22,7 @@ class appConfig {
      * on framework startup (in index.php) on {@link appCore::start()}.
      * 
      * Description of the values:
+     * 
      * * General settings *
      * - REQUIRED: absolute_url: absolute url to the site WITH the ending slash, for example: "http://example.com/mysite/"
      * - REQUIRED: relative_url: relative url to the site WITH the beginning and ending slash, for example: "/mysite/"
@@ -31,6 +37,7 @@ class appConfig {
      *          "::1", //127.0.0.1 in ipv6   
      *      )
      *  )
+     *  
      *  If user tries to access given controller from different ip, he will be shown a 404 error. 
      *  This can be used as a very (very!) simple protection for specific controllers.
      *
@@ -52,7 +59,7 @@ class appConfig {
      * 
      * @var array 
      */
-    private static $_defaults = array(	
+    protected static $_defaults = array(	
         "absolute_url" => false,
 	"relative_url" => false,
         "cookie_name" => "PHPSESSID",

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class appDatabase</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> appDatabase</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Takes care of all connecions and queries done to databases.</p>
+<p class="description"><p>It extends appCore to get access to throwError() method.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Paulina Budzon &lt;<a href="mailto:paulina.budzon@gmail.com">paulina.budzon@gmail.com</a>&gt;</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_app---appDatabase.php.html">/app/appDatabase.php</a> (line <span class="field">13</span>)
+		</p>
+		
+				
+		<pre><a href="../frameworkCore/appCore.html">appCore</a>
+   |
+   --appDatabase</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-vars">Vars</a>
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/AbstractClass.png"
+								 alt="Abstract class"
+								 title="Abstract class"
+								 style="vertical-align: center"/>
+						<a href="../frameworkCore/databaseDrivers/databaseResult.html">databaseResult</a>
+					</td>
+					<td>
+											Abstract class for each database driver.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../frameworkCore/databaseDrivers/databaseMongoDB.html">databaseMongoDB</a>
+					</td>
+					<td>
+											Driver for MongoDB.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em; white-space: nowrap">
+						<img src="../media/images/Class.png"
+								 alt=" class"
+								 title=" class"
+								 style="vertical-align: center"/>
+						<a href="../frameworkCore/databaseDrivers/databaseMysql.html">databaseMysql</a>
+					</td>
+					<td>
+											Driver for MySQL.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">appDatabase</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#crypt" title="details" class="method-name">crypt</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$iv</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#decrypt" title="details" class="method-name">decrypt</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$iv</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result"><a href="../frameworkCore/appDatabase.html">appDatabase</a></span>
+										<a href="#getModel" title="details" class="method-name">getModel</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$modelName</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../frameworkCore/appCore.html">appCore</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../frameworkCore/appCore.html#var$_cookies">appCore::$_cookies</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../frameworkCore/appCore.html#var$_view">appCore::$_view</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-vars">Vars</a>
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">18</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds &quot;models/&quot; directory to include path.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">appDatabase</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../frameworkCore/databaseResults/MongoDBResult.html#method__construct">MongoDBResult::__construct()</a>
+								: Fills appropriate information about the result.
+							</li>
+					<li>
+				<a href="../frameworkCore/databaseResults/MySqlResult.html#method__construct">MySqlResult::__construct()</a>
+								: Fills appropriate information about the result.
+							</li>
+					<li>
+				<a href="../frameworkCore/databaseDrivers/databaseMongoDB.html#method__construct">databaseMongoDB::__construct()</a>
+								: Checks if all data is in place for connection and sets $_cacheKey.
+							</li>
+					<li>
+				<a href="../frameworkCore/databaseDrivers/databaseMysql.html#method__construct">databaseMysql::__construct()</a>
+								: Selects appropriate database table and sets $_cacheKey.
+							</li>
+				</ul>
+	</div>
+<a name="methodcrypt" id="crypt"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">crypt</span> (line <span class="line-number">43</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Common method used by database drivers to encrypt the data.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Encrypted data.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			crypt
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$iv</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Data to be encrypted.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$iv</span><span class="var-description">: IV for encryption.</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../frameworkCore/databaseDrivers/databaseMongoDB.html#methodcrypt">databaseMongoDB::crypt()</a>
+								: Encrypts data in model if encryption is set.
+							</li>
+					<li>
+				<a href="../frameworkCore/databaseDrivers/databaseMysql.html#methodcrypt">databaseMysql::crypt()</a>
+								: Encrypts data in model if encryption is set.
+							</li>
+				</ul>
+	</div>
+<a name="methoddecrypt" id="decrypt"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">decrypt</span> (line <span class="line-number">54</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Common method used by database drivers to decrypt the data.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Decrypted data.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			decrypt
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$iv</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Data to be decrypted.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$iv</span><span class="var-description">: IV for encryption.</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../frameworkCore/databaseDrivers/databaseMongoDB.html#methoddecrypt">databaseMongoDB::decrypt()</a>
+								: Decrypts data in model if encryption is set.
+							</li>
+					<li>
+				<a href="../frameworkCore/databaseDrivers/databaseMysql.html#methoddecrypt">databaseMysql::decrypt()</a>
+								: Decrypts data in model if encryption is set.
+							</li>
+				</ul>
+	</div>
+<a name="methodgetModel" id="getModel"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">getModel</span> (line <span class="line-number">27</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns appropriate model object. This should be used to access each model.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Appropriate model object, <a href="../frameworkCore/databaseDrivers/databaseMongoDB.html">databaseMongoDB</a> or <a href="../frameworkCore/databaseDrivers/databaseMysql.html">databaseMysql</a>.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../frameworkCore/appDatabase.html">appDatabase</a></span>
+		<span class="method-name">
+			getModel
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$modelName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$modelName</span><span class="var-description">: Name of the model object (without &quot;Model&quot; suffix).</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../frameworkCore/appCore.html">appCore</a></span></p>
+					<blockquote>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methodcache">appCore::cache()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methodcookies">appCore::cookies()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methoddb">appCore::db()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methodredirect">appCore::redirect()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methodrequest">appCore::request()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methodstart">appCore::start()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methodsthrowError">appCore::sthrowError()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methodthrow404">appCore::throw404()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methodthrowError">appCore::throwError()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methoduser">appCore::user()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../frameworkCore/appCore.html#methodview">appCore::view()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Mon, 02 Jan 2012 16:08:36 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>
