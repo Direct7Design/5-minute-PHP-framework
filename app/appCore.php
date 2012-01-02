@@ -71,6 +71,7 @@ class appCore {
 	spl_autoload_register(array($this, "loadClass"));
 	
 	appConfig::set($config);
+	ini_set("short_open_tag", "1");
         
         if(appConfig::get("debug")){
             error_reporting(E_ALL|E_STRICT);
