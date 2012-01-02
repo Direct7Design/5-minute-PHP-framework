@@ -62,6 +62,10 @@ You may want to refer to the documentation of `appConfig::$_defaults` variable f
 
 Code!
 
+## Documentation
+
+The whole code is fully-documented and pre-generated HTML documentation can be found in `docs/` directory. If you'd like to browse it online, please visit [GitHub pages for this repository](http://pbudzon.github.com/5-minute-PHP-framework/) for information where to find it.
+
 
 ## LICENSE
 
