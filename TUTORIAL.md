@@ -7,7 +7,7 @@ This very simple tutorial shows the basics of how to use this framework.
 ### Configuration
 
 Source files are divided into 2 main directories: `app` and `public_html` (there's also `docs` with documentation, but it's not important for
-the framework itself). `app` directory contains the core files of the application, `public_html` is, on the other hand, the place where you'r server should 
+the framework itself). `app` directory contains the core files of the application, `public_html` is, on the other hand, the place where your server should 
 point to.
 
 All settings and configuration options are held in `public_html/index.php` file. The only thing that should be changed in this file is this array:
@@ -46,24 +46,26 @@ This is the only "special" controller in the application: `index()` method is ca
 For example if your `absolute_url` is set to *http://www.example.com/*, every request coming to *http://www.example.com/* will be redirected to this `index()` 
 method. 
 
-All request that does not come to the root directory (`absolute_url`) are treated with the standard MVC approach: **http://www.example.com/controller/action/param1/param2/...**
-If the `method` is not set (i.e. request comes to *http://www.example.com/controller/*) will be redirected to the `index()` method in specified controller. 
+All requests that do not come to the root directory (`absolute_url`) are treated with the standard MVC approach: **http://www.example.com/controller/action/param1/param2/.../**
+If the `action` is not set (i.e. request comes to *http://www.example.com/controller/*), it will be redirected to the `index()` method in specified controller. 
 
 See the example `welcomeController`: if the user accesses the *http://www.example.com/welcome/* page, his request will be passed to `welcomeController::index()` 
 method. If the user opens the *http://www.example.com/welcome/someaction/* page his request will be passed to `welcomeController::someaction()`. 
 
-**Note:** is the method called in url does not exists in the controller, the `index()` method will be called instead.
+**Note:** if the action called in url does not exist in the controller, the `index()` method will be called instead.
+
+
 
 #### Models
 
-`models` directory contains very model that may be needed in your application. Each model can be connected to a different database (right now: MongoDB or MySQL).
+`models` directory contains every model that may be needed in your application. Each model can be connected to a different database (right now: MongoDB or MySQL).
 The type of the database that the model refers to is determined by the class that model extends.
 
-`usersModel` that will be connecting to MongoDB database must extend the `databaseMongoDB` class, like the example:
+`usersModel` that will be connecting to MongoDB database must extend the `databaseMongoDB` class:
 
     class usersModel extends databaseMongoDB {}
 
-`usersModel` that will be connecting to MySQL database must extend the `databaseMysql` class, like the example:
+`usersModel` that will be connecting to MySQL database must extend the `databaseMysql` class:
 
     class usersModel extends databaseMysql {}
 
@@ -73,10 +75,12 @@ Each model contains two basic information that are required for it to work: `$_d
 
 `$_dbTable` is the name of the table (with MySQL) or collection (with MongoDB) that the model refers to.
 
-So, if you want your model to connect to the database "test" and use the table "users", you should have the following code in your model:
+So, if you want your model to connect to the database "test" and use the table (collection) "users", you should have the following code in your model:
 
     protected $_dbName = "test";
     protected $_dbTable = "users";
+
+
 
 
 #### Templates
@@ -191,6 +195,8 @@ The result object in `$users` variable will be the same (appropriate `databaseRe
     foreach($users as $user){
         $users_names[] = $user->get("login");
     }
+
+Please refer to the appropriate `databaseResult` object documentation for information what more can be done with this objects.
 
 
 ## Using helpers
