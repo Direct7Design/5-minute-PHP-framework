@@ -49,6 +49,12 @@ class appView {
     private $_ajaxData = array();
     
     /**
+     * Additional headers that will be sent.
+     * @var array 
+     */
+    private $_headers = array();
+    
+    /**
      * Title of the page - used in <title> tags.
      * If not set - the default title will be used as defined in template.
      * @var string
@@ -71,6 +77,13 @@ class appView {
      * @return bool Returns false if views are disabled.
      */
     public function render(){
+        if(!empty($this->_headers)){
+            foreach($this->_headers as $k => $header){
+                header($header);
+                unset($this->_headers[$k]);
+            }
+        }
+        
 	if($this->_disabled) return false;
 	
 	if(empty($this->_ajax) && !$this->_isAjax){
@@ -199,5 +212,14 @@ class appView {
      */
     public function setTitle($title){
         self::$title = $title;
+    }
+    
+    /**
+     * Adds a custom header to be sent before HTML.
+     * @param string $name Name of the header, for example "Content-Type"
+     * @param string $value Value for the header, for example "text/plain"
+     */
+    public function addHeader($name, $value){
+        $this->_headers[$name] = "$name: $value";
     }
 }
