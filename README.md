@@ -66,8 +66,11 @@ Code!
 
 The whole code is fully-documented and pre-generated HTML documentation can be found in `docs/` directory. If you'd like to browse it online, please visit [GitHub pages for this repository](http://pbudzon.github.com/5-minute-PHP-framework/) for information where to find it.
 
+## Tutorial
 
-## LICENSE
+Simple tutorial is available in [TUTORIAL.md](TUTORIAL.md) file.
+
+## License
 
 Licensed under BSD 2-Clause License.
 
