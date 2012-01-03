@@ -20,8 +20,8 @@ Small and fast PHP framework usable for practically any small PHP project. Conta
 * PHP 5.3.
 * Optional: [mcrypt](http://php.net/mcrypt) extension is required for encryption.
 * Optional: [memcached](http://php.net/memcached) extension is required for caching.
-* Optional: [PDO with MySQL driver](http://php.net/pdo) extension is required for MySQL usage.
-* Optional: [MongoDB driver](http://php.net/mongo) extension is required for MongoDB usage.
+* Optional: [PDO extension with MySQL driver](http://php.net/pdo) is required for MySQL usage.
+* Optional: [MongoDB](http://php.net/mongo) extension is required for MongoDB usage.
 
 ## How to start
 
@@ -35,7 +35,7 @@ Small and fast PHP framework usable for practically any small PHP project. Conta
 
 1. Follow the steps from *How to start*.
 2. Rename appropriate file from `app/models` to `usersModel.php` (for example, if you want to use MongoDB, rename `usersModel_mongodb.php` to `usersModel.php`).
-3. Refer to the chosen model file for information how to add a example login data to your database.
+3. Refer to the chosen model file for information how to add an example login data to your database.
 4. Add appropriate config settings concerning your database to `index.php`:
  + For MySQL: `mysql_db_host`, `mysql_db_port`, `mysql_db_user`, `mysql_db_pass`.
  + For MongoDB: `mongo_db_socket` or `mongo_db_host` and `mongo_db_port`, optionally also `mongo_db_user`, `mongo_db_pass`.
