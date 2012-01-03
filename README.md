@@ -68,7 +68,7 @@ The whole code is fully-documented and pre-generated HTML documentation can be f
 
 ## Tutorial
 
-Simple tutorial is available in [TUTORIAL.md](TUTORIAL.md) file.
+Simple tutorial is available in [TUTORIAL](5-minute-PHP-framework/TUTORIAL.md) file.
 
 ## License
 
