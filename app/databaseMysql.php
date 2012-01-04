@@ -135,7 +135,7 @@ class databaseMysql extends appDatabase {
      * @param bool $onlyExec If the results should be fetched, or only the query executed.
      * @return MySqlResult 
      */
-    final public function load($sql, $params = false, $onlyExec = false){	
+    final public function load($sql, $params = array(), $onlyExec = false){	
 	if($this->_cache && !$fetchAll){
 	    $cacheKey = sha1($sql);
 	    $cachedVal = $this->cache()->get($cacheKey, $this->_cacheKey);

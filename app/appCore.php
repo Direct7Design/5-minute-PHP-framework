@@ -273,7 +273,15 @@ class appCore {
      */
     public function redirect($url = false){
 	$redirect = appConfig::get("relative_url");
-	if($url) $redirect .= $url;
+	if($url){
+	    $url = trim($url);
+	    if(strpos($url, "http") === 0){
+		$redirect = $url;
+	    }
+	    else{
+		$redirect .= $url;
+	    }   
+	}
 	header("Location: $redirect");
 	self::throwError(302);
     }
