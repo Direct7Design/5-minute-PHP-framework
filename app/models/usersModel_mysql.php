@@ -2,6 +2,13 @@
 /**
  * This is an example model used with MySQL. To use the example for user's login add the following data to your MySQL:
  * 
+ * CREATE TABLE `users` (
+ *  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+ *  `login` varchar(50) DEFAULT NULL,
+ *  `password` varchar(50) DEFAULT NULL,
+ *  PRIMARY KEY (`id`)
+ * )  DEFAULT CHARSET=utf8;
+ * 
  * INSERT INTO `users` (`login`, `password`) VALUES ('Y/TP1oRLTyaTtLJLKSvIHYxMOZTSxz0NWMAwBn6FKpA=', 'Y/TP1oRLTyaTtLJLKSvIHYxMOZTSxz0NWMAwBn6FKpA=');
  * 
  * To use this model, rename this file to "usersModel.php". 
@@ -20,7 +27,7 @@ class usersModel extends databaseMysql {
      * Gets user document (if exists) by login and password.
      * @param string $login Login (clear-text).
      * @param string $password Password (clear-text).
-     * @return MongoDBResult 
+     * @return MySqlResult 
      */
     public function getUser($login, $password){
 	$sql = "SELECT * FROM ".$this->_dbTable." WHERE login = :login AND password = :password";
@@ -32,14 +39,12 @@ class usersModel extends databaseMysql {
      * Adds new user.
      * @param string $login Login (clear-text).
      * @param string $password Password (clear-text).
-     * @return mixed Result returned by {@link insert()}. 
+     * @return bool True on success, false on failure.
      */
     public function add($login, $password){
-	$data = array(
-	    "login" => $this->crypt($login),
-	    "password" => $this->crypt($password)
-	);
-	return $this->insert($data);
+	$sql = "INSERT IGNORE INTO ".$this->_dbTable." SET login = :login AND password = :password";
+	$params = array(':login' => $this->crypt($login), ':password' => $this->crypt($password));
+	return $this->load($sql, $params, true);
     }
    
 }
