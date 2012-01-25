@@ -78,6 +78,6 @@ class environmentTest extends PHPUnit_Framework_TestCase {
 	    }
 	}
 
-//	$this->assertEmpty($this->_warnings, "Warnings occured: \n".implode("\n", $this->_warnings));;
+	$this->assertEmpty($this->_warnings, "Warnings occured: \n".implode("\n", $this->_warnings));;
     }
 }

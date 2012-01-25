@@ -1,5 +1,7 @@
 <?php
 /**
+ * Tests checking the application - settings and routing.
+ * 
  * @author Paulina Budzon <paulina.budzon@gmail.com>
  * @package frameworkTests
  */
@@ -8,6 +10,9 @@ class frameworkTest extends PHPUnit_Extensions_OutputTestCase {
     private $_core;
     private $_corePath; 
     
+    /**
+     * Create basic application. Initializes session to prevent errors. 
+     */
     public function setUp() {
 	require_once '../app/appCore.php';
 	session_id("phpunit");
@@ -19,6 +24,8 @@ class frameworkTest extends PHPUnit_Extensions_OutputTestCase {
     
  
     /**
+     * Tets if login page is successfully opened on startup.
+     * 
      * @covers appCore::start
      * @covers appCore::dispatch
      * @covers appCore::end
@@ -37,7 +44,7 @@ class frameworkTest extends PHPUnit_Extensions_OutputTestCase {
     }
     
     /**
-     * Tests whether redirection works appropriately.
+     * Tests whether redirection works correctly.
      */
     public function testWelcomePage(){
 	$_SERVER['REQUEST_URI'] = "/example/welcome/";
@@ -66,6 +73,9 @@ class frameworkTest extends PHPUnit_Extensions_OutputTestCase {
 	}
     }
     
+    /**
+     * Tests if 404 page is being shown. 
+     */
     public function test404(){
 	$_SERVER['REQUEST_URI'] = "/example/404/";
 
