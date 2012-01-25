@@ -42,7 +42,7 @@ class usersModel extends databaseMysql {
      * @return bool True on success, false on failure.
      */
     public function add($login, $password){
-	$sql = "INSERT IGNORE INTO ".$this->_dbTable." SET login = :login AND password = :password";
+	$sql = "INSERT IGNORE INTO ".$this->_dbTable." (login, password) VALUES (:login, :password)";
 	$params = array(':login' => $this->crypt($login), ':password' => $this->crypt($password));
 	return $this->load($sql, $params, true);
     }
